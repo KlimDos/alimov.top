@@ -1,5 +1,5 @@
 # constant
-REPO="klimdos/polybank"
+REPO="klimdos/alimov.online"
 ARTEFACT_VERSION="$(git describe --long --always | sed -r "s/-(([^-]*-){1}[^-]*)$/.\\1/")"
 
 # creating app version
