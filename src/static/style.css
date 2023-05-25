@@ -1,0 +1,53 @@
+#content {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+}
+
+body {
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  font-size: 3px;
+}
+
+
+/* @font-face {
+  font-family: "Pinch My Ride";
+  src: url("static/pinch-my-ride-font/PinchMyRide.ttf.ttf") format("truetype");
+} 
+@font-face {
+  font-family: trial;
+  src: url("pricedown-regular/pricedown-regular.ttf");
+}
+
+.btn {
+    text-shadow: 0px 0px black;
+    color: white;
+}
+
+.overlay-top {
+    z-index: 9;
+}
+
+@media only screen and (max-width: 992px) {
+  .h-width {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.big_text {
+  font-size:3.6em
+}
+
+.select:hover {
+  background-color: black;
+}
+.select_key {
+  background-color: white;
+}
+*/
