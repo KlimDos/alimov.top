@@ -1,6 +1,7 @@
 #content {
     font-family: 'Courier New', Courier, monospace;
     white-space: pre;
+    font-size: 3px;
 }
 
 body {
@@ -11,10 +12,16 @@ body {
   justify-content: center;
   height: 100%;
   margin: 0;
-  font-size: 3px;
 }
 
+.gfont {
+  font-family: 'Fira Code', cursive;
+  color: darkgreen;
+}
 
+.container-clr {
+  color: white;
+}
 /* @font-face {
   font-family: "Pinch My Ride";
   src: url("static/pinch-my-ride-font/PinchMyRide.ttf.ttf") format("truetype");
