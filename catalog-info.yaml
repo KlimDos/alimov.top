@@ -1,10 +1,1 @@
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: alimov.online
-  annotations:
-    github.com/project-slug: KlimDos/alimov.online
-spec:
-  type: other
-  lifecycle: unknown
-  owner: "1"
+
