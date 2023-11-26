@@ -58,3 +58,21 @@ body {
   background-color: white;
 }
 */
+
+#loader {
+  /* margin: auto; */
+  border: 10px solid dimgray;
+  border-radius: 50%;
+  border-top: 16px solid darkgreen;
+  width: 4.5em;
+  height: 4.5em;
+  animation: spinner 2s linear infinite;
+  display: none;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+
+}
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

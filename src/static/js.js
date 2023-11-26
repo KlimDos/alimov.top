@@ -14,11 +14,25 @@ function displayTextWithInterval(textArray, interval) {
     displayNextText();
 }
 
+function displayLoading(show) {
+    const loadingElement = document.getElementById("loader");
+    console.log(loadingElement)
+    if (show) {
+        loadingElement.style.display = "block"; // Show loading element
+    } else {
+        loadingElement.style.display = "none"; // Hide loading element
+    }
+}
+
+displayLoading(true);
+
 fetch('/json')
 .then(response => response.json())
 .then(data => {
+    displayLoading(false);
     displayTextWithInterval(data, 100);
 })
 .catch(error => {
+    displayLoading(false);
     console.error('Error uploading JSON:', error);
 });
