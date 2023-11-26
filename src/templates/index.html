@@ -15,21 +15,19 @@
     />
 
     <title>Alimov</title>
-    <script type="text/javascript" src="static/js.js"></script>
     <link rel="stylesheet" href="static/style.css"/>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">  
 
-
-
 </head>
 <body>
     {% block card %}
-
-    <div class="container text-center position-absolute top-50 start-50 translate-middle gfont">
-      <div id="top"  class="position-absolute z-n1 top-0 start-50 translate-middle-x"></div>
+    <div id="version" class="position-absolute bottom-0 end-0 translate-middle-x"><p class="text-white-50 p-0 m-0 font-monospace">v0.0.1-gre232s3</p></div>
+    <div class="container columns is-vcentered text-center position-absolute top-50 start-50 translate-middle gfont">
+      <div id="top"  class="position-absolute z-n1 top-0 start-50 translate-middle-x">
+      <div id="loader"></div>
+    </div>
       <div id="content"  class="container-clr">{{ content|safe }}</div>
       <div id="projects" class="position-absolute bottom-0 top-50 start-0 translate-middle-y ms-5 ps-5 text-start gfont">
         <p class=""><h2>projects:</h2></p>
@@ -48,7 +46,7 @@
         <p class=""> - email</p>
         <p class=""> - CV</p>
       </div>
-      <div id="version" class="position-absolute bottom-0 end-0 translate-middle-x"><p class="text-white-50 p-0 m-0 font-monospace">v0.0.1-gre232s3</p></div>
     </div>
     {%- endblock %}
+    <script type="text/javascript" src="static/js.js"></script>
 </body>
