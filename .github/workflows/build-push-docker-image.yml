@@ -20,5 +20,5 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Run the script
+    - name: Run build script
       run: bash ./build_manual.sh
