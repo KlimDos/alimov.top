@@ -20,5 +20,14 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+    - name: Generate semver
+      id: version-generator
+      run: |
+        ARTEFACT_VERSION=$(git describe --long --always | sed -r "s/-(([^-]*-){1}[^-]*)$/.\\1/") 
+        echo "ARTEFACT_VERSION=${ARTEFACT_VERSION}" >> $GITHUB_ENV
+        
+    - name: Print ARTEFACT_VERSION
+      run: echo "ARTEFACT_VERSION is $ARTEFACT_VERSION"
+
     - name: Run build script
       run: bash ./build_manual.sh
