@@ -1,78 +1,21 @@
-#content {
-    font-family: 'Courier New', Courier, monospace;
-    white-space: pre;
-    font-size: 3px;
-}
+/* DEBUG
+ * {
+  border: 1px solid red;
+} */
 
 body {
   color: white;
   background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  margin: 0;
 }
 
-.gfont {
+#panels {
   font-family: 'Fira Code', cursive;
-  color: darkgreen;
 }
 
-.container-clr {
+#ascii {
   color: white;
-}
-/* @font-face {
-  font-family: "Pinch My Ride";
-  src: url("static/pinch-my-ride-font/PinchMyRide.ttf.ttf") format("truetype");
-} 
-@font-face {
-  font-family: trial;
-  src: url("pricedown-regular/pricedown-regular.ttf");
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre;
+  font-size: 3px;
 }
 
-.btn {
-    text-shadow: 0px 0px black;
-    color: white;
-}
-
-.overlay-top {
-    z-index: 9;
-}
-
-@media only screen and (max-width: 992px) {
-  .h-width {
-    width: 50%;
-    height: 50%;
-  }
-}
-
-.big_text {
-  font-size:3.6em
-}
-
-.select:hover {
-  background-color: black;
-}
-.select_key {
-  background-color: white;
-}
-*/
-
-#loader {
-  /* margin: auto; */
-  border: 10px solid dimgray;
-  border-radius: 50%;
-  border-top: 16px solid darkgreen;
-  width: 4.5em;
-  height: 4.5em;
-  animation: spinner 2s linear infinite;
-  display: none;
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-
-}
-@keyframes spinner {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}

@@ -1,6 +1,6 @@
 function displayTextWithInterval(textArray, interval) {
     let index = 0;
-    const outputElement = document.getElementById("content");
+    const outputElement = document.getElementById("ascii");
     function displayNextText() {
         if (index < textArray.length) {
         outputElement.textContent = textArray[index];
@@ -15,8 +15,8 @@ function displayTextWithInterval(textArray, interval) {
 }
 
 function displayLoading(show) {
-    const loadingElement = document.getElementById("loader");
-    console.log(loadingElement)
+    const loadingElement = document.getElementById("spinner");
+    //console.log(loadingElement)
     if (show) {
         loadingElement.style.display = "block"; // Show loading element
     } else {

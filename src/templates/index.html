@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alimov</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-
-    <title>Alimov</title>
-    <link rel="stylesheet" href="static/style.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">
 
 </head>
-<body>
-    {% block card %}
-    <div id="version" class="position-absolute bottom-0 end-0 translate-middle-x"><p class="text-white-50 p-0 m-0 font-monospace">v0.0.1-gre232s3</p></div>
-    <div class="container columns is-vcentered text-center position-absolute top-50 start-50 translate-middle gfont">
-      <div id="top"  class="position-absolute z-n1 top-0 start-50 translate-middle-x">
-      <div id="loader"></div>
+
+<body class="position-relative d-flex align-items-center min-vh-100">
+  {% block card %}
+
+  <button id="spinner" class="btn btn-light position-absolute top-50 start-50 translate-middle" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+    <span role="status">Loading...</span>
+  </button>
+
+  <div id="ascii" class="position-absolute top-50 start-50 translate-middle">
+   {{ content|safe }}
+  </div>
+  <div id="panels" class="position-relative container d-flex justify-content-around text-light-emphasis">
+    <div class="z-1 fs-4 fs-md-6">
+      <p class="">projects:</p>
+      <p>- radio.alimov.pro</p>
+      <p>- crypto calc</p>
+      <p>- terraform report</p>
+      <p>- telegram GPT bot</p>
+      <p>- alimov.online</p>
+      <p>- home-k8s</p>
+      <p>- argo.alimov.pro</p>
+      <p>- portainer.alimov.pro</p>
     </div>
-      <div id="content"  class="container-clr">{{ content|safe }}</div>
-      <div id="projects" class="position-absolute bottom-0 top-50 start-0 translate-middle-y ms-5 ps-5 text-start gfont">
-        <p class=""><h2>projects:</h2></p>
-        <p class="">   - radio</p>
-        <p class="">   - crypto calc</p>
-        <p class="">   - terraform report</p>
-        <p class="">   - telegram GPT bot</p>
-        <p class="">   - alimov.online</p>
-        <p class="">   - home-k8s</p>
-        <p class="">     - argo</p>
-        <p class="">     - portainer</p>
-      </div>
-      <div id="contacts" class="position-absolute bottom-0 top-50 end-0 translate-middle-y me-5 pe-5 text-start">
-        <p class=""><h2>contact me:</h2></p>
-        <p class=""> - gitHub</p>
-        <p class=""> - email</p>
-        <p class=""> - CV</p>
-      </div>
+
+    <div class="z-1 fs-4 fs-md-6">
+      <p>contact me:</p>
+      <p>- gitHub</p>
+      <p>- email</p>
+      <p>- cv</p>
     </div>
-    {%- endblock %}
-    <script type="text/javascript" src="static/js.js"></script>
+
+    <div id="version" class="position-absolute bottom-0 end-0 z-1 text-info text-opacity-25">version: v0.0.1-gre232s3</div>
+  </div>
+  {%- endblock %}
+  <script type="text/javascript" src="static/js.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
