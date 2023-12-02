@@ -32,10 +32,10 @@ app = Flask(__name__)
 file_index = 1
 file_indexes_str = []
 data_json = []
-for x in range(1, 256):
+for x in range(1, 128):
     file_indexes_str = str(x).zfill(3)
 
-    file_name = f"src/static/png/txt6/{file_indexes_str}-ascii-art.txt"
+    file_name = f"src/static/png/result/{file_indexes_str}-ascii-art.txt"
     with open(file_name, "r") as file:
         data_json.append(file.read())
 

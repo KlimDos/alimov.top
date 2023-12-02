@@ -30,7 +30,7 @@ fetch('/json')
 .then(response => response.json())
 .then(data => {
     displayLoading(false);
-    displayTextWithInterval(data, 100);
+    displayTextWithInterval(data, 150);
 })
 .catch(error => {
     displayLoading(false);
