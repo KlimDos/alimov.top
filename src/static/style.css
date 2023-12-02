@@ -1,5 +1,5 @@
-/* DEBUG
- * {
+/* DEBUG */
+ /* * {
   border: 1px solid red;
 } */
 
@@ -16,6 +16,12 @@ body {
   color: white;
   font-family: 'Courier New', Courier, monospace;
   white-space: pre;
-  font-size: 3px;
+  font-size: 4px;
 }
 
+/* Custom CSS to reduce font size in the panels div on mobile */
+@media (max-width: 767.98px) {
+  .panel {
+    font-size: 0.75rem; /* Adjust this value as needed */
+  }
+}
