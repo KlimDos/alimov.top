@@ -23,7 +23,7 @@ dictConfig({
 })
 
 
-load_dotenv()
+#load_dotenv()
 
 print(os.environ.get('ARTEFACT_VERSION'))
 build = os.environ.get('ARTEFACT_VERSION')
