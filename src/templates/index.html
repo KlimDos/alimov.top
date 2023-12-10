@@ -9,6 +9,9 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
   <link rel="stylesheet" href="static/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,15 +22,17 @@
 <body class="position-relative d-flex align-items-center min-vh-100">
 
   {% block card %}
-  <div id="version" class="position-absolute top-0 end-0 z-1 text-info text-opacity-25 m-2">version: v0.0.1-gre232s3
+  <div id="version" class="position-absolute top-0 end-0 z-1 text-info text-opacity-25 m-2 panel">version: v0.0.1-gre232s3
   </div>
 
-  <button class="btn btn-light d-block d-md-none position-absolute top-0 start-50 translate-middle-x m-2 opacity-50" type="button" data-bs-toggle="collapse" data-bs-target=".panel"
-    aria-expanded="false" aria-controls="panel" style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .5rem;">
+  <button class="btn btn-light d-block d-md-none position-absolute top-0 start-50 translate-middle-x m-2 opacity-50"
+    type="button" data-bs-toggle="collapse" data-bs-target=".panel" aria-expanded="false" aria-controls="panel"
+    style="--bs-btn-padding-y: .1rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .5rem;">
     show content
   </button>
 
-  <button id="spinner" class="btn btn-light position-absolute top-50 start-50 translate-middle opacity-50" type="button" disabled>
+  <button id="spinner" class="btn btn-light position-absolute top-50 start-50 translate-middle opacity-50" type="button"
+    disabled>
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">Loading...</span>
   </button>
@@ -36,25 +41,104 @@
     {{ content|safe }}
   </div>
 
-
   <div id="panels" class="collapse position-relative container d-flex justify-content-around text-light-emphasis">
     <div class="collapse panel d-md-block z-1">
       <p>projects:</p>
-      <p>- radio.alimov.pro</p>
-      <p>- crypto calc</p>
-      <p>- terraform report</p>
-      <p>- telegram GPT bot</p>
-      <p>- alimov.online</p>
-      <p>- home-k8s</p>
-      <p>- argo.alimov.pro</p>
-      <p>- portainer.alimov.pro</p>
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://polybank.alimov.online/radio">
+          <i class="bi bi-boombox"></i> radio.alimov.pro
+        </a>
+        <div class="hidden-div">
+          <a href="https://polybank.alimov.online/radio"><i class="bi bi-boombox"></i> demo</a>
+          <a href="https://github.com/KlimDos/polybank"><i class="bi bi-github"></i> gitHub</a>
+        </div>
+      </div>
+
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://klimdos.github.io">
+          <i class="bi bi-currency-bitcoin"></i> crypto calc
+        </a>
+        <div class="hidden-div">
+          <a href="https://klimdos.github.io/"><i class="bi bi-currency-bitcoin"></i> demo</a>
+          <a href="https://github.com/KlimDos/klimdos.github.io"><i class="bi bi-github"></i> gitHub</a>
+        </div>
+      </div>
+
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="#">
+          <i class="bi bi-aspect-ratio"></i> terraform report 
+        </a>
+        <div class="hidden-div">
+          <a href="#">no demo tbd</a>
+          <a href="https://github.com/KlimDos/terra-discrepancy-monitor"><i class="bi bi-github"></i> gitHub [private]</a>
+        </div>
+      </div>
+
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://t.me/non_authoritative_bot">
+          <i class="bi bi-telegram"></i> telegram GPT bot
+        </a>
+        <div class="hidden-div">
+          <a href="https://t.me/non_authoritative_bot"><i class="bi bi-telegram"></i> non_authoritative_bot</a>
+          <a href="https://github.com/KlimDos/tg-gpt-bot"><i class="bi bi-github"></i> gitHub [public]</a>
+        </div>
+      </div>
+
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://alimov.pro">
+          <i class="bi bi-house"></i> alimov.online
+        </a>
+        <div class="hidden-div">
+          <a href="#"><i class="bi bi-house"></i> Home</a>
+          <a href="https://github.com/KlimDos/alimov.online"><i class="bi bi-github"></i> git-hub [public]</a>
+        </div>
+      </div>
+
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://github.com/KlimDos/home-k8s">
+          <i class="bi bi-cpu"></i> home-k8s
+        </a>
+        <div class="hidden-div">
+          <a href="https://github.com/KlimDos/home-k8s"><i class="bi bi-github"></i> git-hub [private]</a>
+        </div>
+      </div>
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://argo.alimov.pro">
+          <i class="bi bi-bezier"></i> argo.alimov.pro
+        </a>
+        <div class="hidden-div">
+          <a href="https://argo.alimov.pro"><i class="bi bi-door-open"></i> login</a>
+          <a href="https://github.com/KlimDos/home-k8s"><i class="bi bi-github"></i> git-hub [private]</a>
+        </div>
+      </div>
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://portainer.alimov.pro">
+          <i class="bi bi-bezier"></i> portainer.alimov.pro
+        </a>
+        <div class="hidden-div">
+          <a href="https://portainer.alimov.pro"><i class="bi bi-door-open"></i> login</a>
+          <a href="https://github.com/KlimDos/home-k8s"><i class="bi bi-github"></i> git-hub [private]</a>
+        </div>
+      </div>
     </div>
 
     <div class="collapse panel d-md-block z-1">
       <p>contact me:</p>
-      <p>- gitHub</p>
-      <p>- email</p>
-      <p>- cv</p>
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="https://github.com/KlimDos">
+          <i class="bi bi-github"></i> gitHub
+        </a>
+      </div>
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="#">
+          <i class="bi bi-envelope"></i> klimdos@gmail.com
+        </a>
+      </div>
+      <div class="link-container">
+        <a class="icon-link icon-link-hover icon-link-move-left main-link" href="cv-login">
+          <i class="bi bi-file-earmark-person"></i> cv
+        </a>
+      </div>
     </div>
 
   </div>
