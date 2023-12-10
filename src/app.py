@@ -45,7 +45,7 @@ def home():
 
     global file_index
     file_index += 1
-    return render_template('index.html')
+    return render_template('index.html', build=build)
 
 @app.route('/json')
 def r():
