@@ -12,7 +12,8 @@ COPY src/ src/
 RUN python -m venv venv && \
     . venv/bin/activate && \
     pip install --upgrade pip && \
-    pip install -r src/requirements.txt
+    pip install -r src/requirements.txt && \
+    pip install gunicorn
 
 # Remove build dependencies
 RUN apt-get update && \
