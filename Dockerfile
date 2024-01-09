@@ -12,8 +12,7 @@ COPY src/ src/
 RUN python -m venv venv && \
     . venv/bin/activate && \
     pip install --upgrade pip && \
-    pip install -r src/requirements.txt && \
-    pip install gunicorn
+    pip install -r src/requirements.txt
 
 # Remove build dependencies
 RUN apt-get update && \
@@ -38,4 +37,4 @@ ENV FLASK_RUN_PORT=${FLASK_RUN_PORT} \
 COPY gunicorn.conf.py .
 
 # Set the entry point for the application
-ENTRYPOINT ["gunicorn", "-c", "gunicorn.conf.py", "src.app:app"]
+ENTRYPOINT ["/venv/bin/gunicorn", "-c", "gunicorn.conf.py", "src.app:app"]
