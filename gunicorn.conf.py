@@ -1,6 +1,6 @@
 # import multiprocessing
 
-# bind = "0.0.0.0:5000"  # Bind to all available network interfaces
+bind = "0.0.0.0:5000"  # Bind to all available network interfaces
 # workers = multiprocessing.cpu_count() * 2 + 1  # Use formula to determine the number of workers
 # worker_class = "gthread"  # Use threads for concurrency
 # threads = multiprocessing.cpu_count() * 2  # Use twice as many threads as there are workers
