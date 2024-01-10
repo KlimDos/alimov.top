@@ -1,25 +1,21 @@
 # Use a specific Python version
-FROM python:3.8-slim-buster
+FROM python:3.9-alpine
 
 LABEL maintainer="Sasha Alimov <klimdos@gmail.com>"
 
-WORKDIR /
+WORKDIR /app
 
-# Only copy necessary files to reduce build context #TBD
+# Only copy necessary files to reduce build context
 COPY src/ src/
 
 # Create and activate a virtual environment
 RUN python -m venv venv && \
-    . venv/bin/activate && \
+    source venv/bin/activate && \
     pip install --upgrade pip && \
-    pip install -r src/requirements.txt
+    pip install -r requirements.txt
 
 # Remove build dependencies
-RUN apt-get update && \
-    apt-get remove -y build-essential && \
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk del .build-deps
 
 # Set Python to run in optimized mode
 ENV PYTHONOPTIMIZE=2
@@ -37,4 +33,4 @@ ENV FLASK_RUN_PORT=${FLASK_RUN_PORT} \
 COPY gunicorn.conf.py .
 
 # Set the entry point for the application
-ENTRYPOINT ["/venv/bin/gunicorn", "-c", "gunicorn.conf.py", "src.app:app"]
+CMD ["/app/venv/bin/gunicorn", "-c", "gunicorn.conf.py", "src.app:app"]
