@@ -8,6 +8,9 @@ WORKDIR /app
 # Only copy necessary files to reduce build context
 COPY src/ src/
 
+# Install build dependencies
+RUN apk add --no-cache build-base libffi-dev
+
 # Create and activate a virtual environment
 RUN python -m venv venv && \
     source venv/bin/activate && \
