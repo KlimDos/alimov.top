@@ -14,8 +14,8 @@ RUN python -m venv venv && \
     pip install --upgrade pip && \
     pip install -r src/requirements.txt
 
-# Remove build dependencies
-RUN apk del .build-deps
+# Remove unnecessary build dependencies
+RUN apk del build-base libffi-dev
 
 # Set Python to run in optimized mode
 ENV PYTHONOPTIMIZE=2
