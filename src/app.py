@@ -6,26 +6,9 @@ from dotenv import load_dotenv
 
 from logging.config import dictConfig
 
-dictConfig({
-    'version': 1,
-    'formatters': {'default': {
-        'format': '[%(asctime)s] [%(thread)d] %(levelname)s %(name)s - %(message)s',
-    }},
-    'handlers': {'wsgi': {
-        'class': 'logging.StreamHandler',
-        'stream': 'ext://flask.logging.wsgi_errors_stream',
-        'formatter': 'default'
-    }},
-    'root': {
-        'level': 'INFO',
-        'handlers': ['wsgi']
-    }
-})
-
-
 #load_dotenv()
 
-print(os.environ.get('ARTEFACT_VERSION'))
+logging.info(os.environ.get('ARTEFACT_VERSION'))
 build = os.environ.get('ARTEFACT_VERSION')
 app = Flask(__name__)
 
