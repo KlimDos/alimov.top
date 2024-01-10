@@ -12,7 +12,7 @@ COPY src/ src/
 RUN python -m venv venv && \
     source venv/bin/activate && \
     pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install -r src/requirements.txt
 
 # Remove build dependencies
 RUN apk del .build-deps
