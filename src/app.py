@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 import logging
 import os
@@ -11,6 +12,9 @@ from logging.config import dictConfig
 logging.info(os.environ.get('ARTEFACT_VERSION'))
 build = os.environ.get('ARTEFACT_VERSION')
 app = Flask(__name__)
+
+# Wraps the application in the ProxyFix middleware to handle X-Forwarded-For, X-Forwarded-Proto, X-Forwarded-Host, X-Forwarded-Port, and X-Forwarded-Prefix headers.
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1, x_prefix=1)
 
 file_index = 1
 file_indexes_str = []
