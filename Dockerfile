@@ -1,5 +1,5 @@
 # Use a specific Python version
-FROM python:3.9-alpine
+FROM python:3.14-alpine
 
 LABEL maintainer="Sasha Alimov <klimdos@gmail.com>"
 
